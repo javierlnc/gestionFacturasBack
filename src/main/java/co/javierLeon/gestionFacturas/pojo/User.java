@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-@NamedQuery(name="User.findById", query="select u from Users where u.Id=Id")
+@NamedQuery(name="User.findById", query="select u from Users where u.Id=id")
 @Data
 @Entity
 @DynamicUpdate
@@ -16,7 +16,7 @@ import org.hibernate.annotations.DynamicUpdate;
 @Table(name="users")
 public class User implements Serializable {
     @Id
-    private String Id;
+    private String id;
     @Column(name="nombre")
     private String nombre;
     @Column(name="numeroCelular")
