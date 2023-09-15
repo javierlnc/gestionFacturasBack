@@ -1,20 +1,23 @@
 package co.javierLeon.gestionFacturas.pojo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 import lombok.Data;
 
 import java.io.Serializable;
 
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
-@NamedQuery(name="User.findById", query="select u from Users where u.Id=id")
+
+
+@NamedQuery(name="User.findById", query="select u from Users where u.id=id")
+@NamedQuery(name="User.findByUsername", query="select u from Users where u.username=username")
 @Data
 @Entity
 @DynamicUpdate
 @DynamicInsert
 @Table(name="users")
-public class User implements Serializable {
+public class User{
     @Id
     private String id;
     @Column(name="nombre")
